@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="plantillas/plantilla.xhtml">
+	<ui:define name="header">
+	    LISTA DE TUTORIAS
+	</ui:define>
+	<ui:define name="content">
+	    <h:form>
+	    	<h:dataTable border="1" var="item" value="#{tutoriasListar.tutoriasList}">
+	    	<h:column>
+	    		<f:facet name="header">ID</f:facet>
+	    		<h:outputText value="#{item.id}"/>
+	    	</h:column>
+	    	<h:column>
+	    		<f:facet name="header">Fecha</f:facet>
+	    		<h:outputText value="#{item.fecha}"/>
+	    	</h:column>
+	    	<h:column>
+	    		<f:facet name="header">HoraInicio</f:facet>
+	    		<h:outputText value="#{item.horaInicio}"/>
+	    	</h:column>
+	    	<h:column>
+	    		<f:facet name="header">HoraFin</f:facet>
+	    		<h:outputText value="#{item.horaFin}"/>
+	    	</h:column>
+	    	<h:column>
+	    		<f:facet name="header">Nombre Estudiante</f:facet>
+	    		<h:outputText value="#{item.estudiante.nombre}"/>
+	    	</h:column>
+	    	<h:column>
+	    		<f:facet name="header">Apellido Estudiante</f:facet>
+	    		<h:outputText value="#{item.estudiante.apellido}"/>
+	    	</h:column>
+	    	<h:column>
+	    		<f:facet name="header">Nombre Profesor</f:facet>
+	    		<h:outputText value="#{item.profesor.nombre}"/>
+	    	</h:column>
+	    	<h:column>
+	    		<f:facet name="header">Apellido Profesor</f:facet>
+	    		<h:outputText value="#{item.profesor.apellido}"/>
+	    	</h:column>
+	    	</h:dataTable>
+	    	<h:commandLink value="Listar mis tutorias" action="#{tutoriasListar.listarPorProfesor(item.profesor.id)}"/>
+	    </h:form>
+	</ui:define>
+	<ui:define name="footer">
+	<br/>
+	    Realizado por LAPC
+	</ui:define>
+</ui:composition>
+</html>

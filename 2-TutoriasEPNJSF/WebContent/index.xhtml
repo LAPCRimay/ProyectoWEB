@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>Ingreso</title>
+<link rel="stylesheet" type="text/css" href="css/stylos.css"/>
+</head>
+
+<body>
+<div>
+    <div id="banner">
+        <div id="logo"><img src=""/></div>
+        <div id="nombresite">Tutorias FIS <br/><span>Facultad de Ingeniería en Sistemas</span></div>
+    </div>
+    <div id="barmenu"></div>
+</div>
+<div id="contenido">
+	<div><img src="images/tutoria_fondo.jpg" width="680" height="400"/></div>
+        <div id="login">
+        <form name="form" method="post" action="AutenticarServlet">
+        <fieldset>
+        <legend>Acceso a Sistema</legend>
+        <label for="txtUsuario">Usuario:</label> <input type="text" name="txtUsuario" placeholder="Usuario"/>
+            <label for="txtClave">Clave:</label> <input type="password" name="txtClave" placeholder="Clave"/>
+            <input type="submit" value="Ingresar"/>
+            </fieldset>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
