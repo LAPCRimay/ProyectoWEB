@@ -16,7 +16,7 @@ public class Principal {
 		EntityManager em;
 		emf=Persistence.createEntityManagerFactory("2-TutoriasEPNJSF");
 		em=emf.createEntityManager();
-		
+		//PRUEBA SUBIDA
 		//Creamos un departamento
 		Departamento dep=new Departamento();
 		dep.setNombre("Ingenieria de Software");
