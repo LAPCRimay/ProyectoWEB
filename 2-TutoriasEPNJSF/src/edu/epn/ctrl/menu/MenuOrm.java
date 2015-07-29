@@ -1,7 +1,7 @@
 package edu.epn.ctrl.menu;
 
 import javax.faces.bean.ManagedBean;
-//PROBANDO LAPC
+//PROBANDO LAPC HDCR
 @ManagedBean
 public class MenuOrm {
 	//CONSTRUCTOR
