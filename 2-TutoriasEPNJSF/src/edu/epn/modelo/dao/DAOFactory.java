@@ -15,5 +15,6 @@ public abstract class DAOFactory {
     public abstract ProfesorDAO getProfesorDAO();
     public abstract TutoriaDAO getTutoriaDAO();
     public abstract DepartamentoDAO getDepartamentoDAO();
+    public abstract AdministradorDAO getAdministradorDAO();
 
 }

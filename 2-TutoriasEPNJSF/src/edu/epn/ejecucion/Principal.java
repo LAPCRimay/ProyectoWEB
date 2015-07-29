@@ -3,7 +3,6 @@ package edu.epn.ejecucion;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
 import edu.epn.modelo.entities.Departamento;
 import edu.epn.modelo.entities.Profesor;
 
@@ -34,6 +33,7 @@ public class Principal {
 		em.getTransaction().begin();
 		em.persist(profe);
 		em.getTransaction().commit();
+		
 
 	}
 

@@ -3,7 +3,7 @@
  import edu.epn.modelo.dao.*;
 
 
-public class JPADAOFactory extends DAOFactory {
+public class JPADAOFactory extends DAOFactory{
 
 	@Override
 	public EstudianteDAO getEstudianteDAO() {
@@ -23,6 +23,11 @@ public class JPADAOFactory extends DAOFactory {
 	@Override
 	public DepartamentoDAO getDepartamentoDAO() {
 		return new JPADepartamentoDAO();
+	}
+
+	@Override
+	public AdministradorDAO getAdministradorDAO() {
+		return new JPAAdministradorDAO();
 	}
 
 	
