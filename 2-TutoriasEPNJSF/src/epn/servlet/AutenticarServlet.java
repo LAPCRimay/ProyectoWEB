@@ -52,7 +52,7 @@ public class AutenticarServlet extends HttpServlet {
 		/*DIRECCIONA EL OBJETO*/
 		if(userServicios!=null){
 			/*LLAMADA A LA PAGINA MENU*/
-			request.getRequestDispatcher("menu_orm.xhtml").forward(request, response);
+			request.getRequestDispatcher("menu.xhtml").forward(request, response);
 			
 		}else{
 

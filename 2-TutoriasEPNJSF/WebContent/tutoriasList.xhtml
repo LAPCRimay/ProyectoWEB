@@ -12,7 +12,7 @@
 	</ui:define>
 	<ui:define name="content">
 	    <h:form>
-	    	<h:dataTable border="1" var="item" value="#{tutoriasListar.tutoriasList}">
+	    	<h:dataTable border="1" var="item" value="#{tutoria.lista}">
 	    	<h:column>
 	    		<f:facet name="header">ID</f:facet>
 	    		<h:outputText value="#{item.id}"/>
@@ -51,7 +51,7 @@
 	</ui:define>
 	<ui:define name="footer">
 	<br/>
-	    Realizado por LAPC
+	    Realizado por LAPC 2
 	</ui:define>
 </ui:composition>
 </html>

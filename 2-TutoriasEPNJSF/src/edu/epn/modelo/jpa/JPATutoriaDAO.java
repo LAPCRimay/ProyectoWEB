@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Query;
 
 import edu.epn.modelo.dao.TutoriaDAO;
+
 import edu.epn.modelo.entities.Tutoria;
 
 public class JPATutoriaDAO extends JPAGenericDAO<Tutoria, Integer>
@@ -16,8 +17,11 @@ implements TutoriaDAO{
 
 	@Override
 	public List<Tutoria> getTutoriaByProfesor(int idProfesor) {
-		return null;
-
+		Query query = this.em.createQuery("SELECT t FROM Tutoria t WHERE t.profesor.id LIKE :idPro");
+		query.setParameter("idPro", idProfesor);
+		@SuppressWarnings("unchecked")
+		List<Tutoria> resultado = query.getResultList();
+		return resultado;
 	}
 
 	@Override
