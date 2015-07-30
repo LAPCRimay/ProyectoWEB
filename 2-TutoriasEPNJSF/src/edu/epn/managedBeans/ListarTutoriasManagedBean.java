@@ -9,7 +9,7 @@ import edu.epn.modelo.dao.DAOFactory;
 import edu.epn.modelo.entities.Tutoria;
 
 @ManagedBean(name="tutoria")
-public class TutoriaManagedBean {
+public class ListarTutoriasManagedBean {
 	List<Tutoria> lista=new ArrayList<Tutoria>();
 	
 	public List<Tutoria> getLista() {
