@@ -2,6 +2,8 @@ package test.ciclovida1;
 
 import javax.faces.bean.ManagedBean;
 
+
+
 @ManagedBean(name="blc")
 public class BsicLifeCycle {
 	private int i;

@@ -8,7 +8,7 @@ import javax.faces.bean.ManagedBean;
 import edu.epn.modelo.dao.DAOFactory;
 import edu.epn.modelo.entities.Tutoria;
 
-@ManagedBean(name="tutoria")
+@ManagedBean(name="listarTutoria")
 public class ListarTutoriasManagedBean {
 	List<Tutoria> lista=new ArrayList<Tutoria>();
 	
