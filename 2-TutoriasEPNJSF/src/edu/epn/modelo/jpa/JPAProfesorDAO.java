@@ -23,15 +23,14 @@ implements ProfesorDAO{
 		@SuppressWarnings("unchecked")
 		List<Profesor> resultado = query.getResultList();
 		return resultado;
-		
-		
+
 	}
 
-	
 	@Override
 	public List<Profesor> getProfesorByIdTutoria(int idDepartamento) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	
 }

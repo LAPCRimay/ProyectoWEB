@@ -1,8 +1,10 @@
 package edu.epn.modelo.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.faces.model.SelectItem;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -39,6 +41,8 @@ public class Profesor extends Usuario implements Serializable{
 	@JoinColumn(name="dep_codigo")
 	private Departamento departamento;
 	
+	
+	
 	public Profesor(){
 		
 	}
@@ -60,6 +64,42 @@ public class Profesor extends Usuario implements Serializable{
 	public void setTutorias(List<Tutoria> tutorias) {
 		this.tutorias = tutorias;
 	}
+
+	
+	public String getNumeroCedula() {
+		return numeroCedula;
+	}
+
+
+
+	public void setNumeroCedula(String numeroCedula) {
+		this.numeroCedula = numeroCedula;
+	}
+
+
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+
+
+	public Boolean getTitular() {
+		return titular;
+	}
+
+
+
+	public void setTitular(Boolean titular) {
+		this.titular = titular;
+	}
+
 
 	@Override
 	public String toString() {

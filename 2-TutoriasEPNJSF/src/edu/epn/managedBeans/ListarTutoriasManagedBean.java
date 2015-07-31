@@ -7,6 +7,7 @@ import javax.faces.bean.ManagedBean;
 
 import edu.epn.modelo.dao.DAOFactory;
 import edu.epn.modelo.entities.Tutoria;
+import edu.epn.modelo.jpa.JPADAOFactory;
 
 @ManagedBean(name="listarTutoria")
 public class ListarTutoriasManagedBean {
@@ -22,7 +23,7 @@ public class ListarTutoriasManagedBean {
 
 	public String getListaByProf(String idProfesor) {
 		int idProf=Integer.parseInt(idProfesor);
-		this.lista=DAOFactory.getFactory().getTutoriaDAO().getTutoriaByProfesor(idProf);
+		this.lista=JPADAOFactory.getFactory().getTutoriaDAO().getTutoriaByProfesor(idProf);
 		return "tutoriasList";
 	}
 	
