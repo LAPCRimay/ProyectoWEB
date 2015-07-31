@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<script name="jquery/jquery.js" library="primefaces"></script>
+<script type="text/javascript" src="calendario_dw/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="calendario_dw/calendario_dw.js"></script>
+
+<script type="text/javascript">
+					$(document).ready(function() {
+						$(".fechatutoria").calendarioDW();
+					})
+				</script>
+</head>
+
+<ui:composition template="plantillas/plantilla.xhtml">
+	<!-- javascript para calendario -->
+<ui:define name="header">
+		REGISTRAR TUTORIA
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid styleClass="table-responsive" columns="2">
+				<f:facet name="header">
+					<h:outputText value="Formulario - Registro Tutoria" />
+				</f:facet>
+
+				<h:outputText value="Profesor: " />
+
+				<h:selectOneMenu id="tutoria"
+					value="#{registrarTutoria.profesorSeleccionado}">
+					<f:selectItems value="#{registrarTutoria.listaProfesores}" />
+				</h:selectOneMenu>
+				<h:outputText value="Fecha: " />
+				<h:inputText id="fecha" clas="fechatutoria" size="10"
+					required="true" label="Fecha" />
+					<p:calendar value="#{registrarTutoria.fecha}" showOn="button"></p:calendar>
+				<h:outputText value="Hora inicio: " />
+				<h:inputText id="horaInicio" value="#{user.password}" size="10"
+					required="true" label="Fecha">
+
+					<f:validateRegex
+						pattern="^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[/\\/](19|20)\d{2}$" />
+				</h:inputText>
+				
+				<h:outputText value="Hora fin: " />
+				<h:inputText id="horaFin" value="#{user.password}" size="10"
+					required="true" label="Fecha">
+					<f:validateRegex
+						pattern="^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[/\\/](19|20)\d{2}$" />
+				</h:inputText>
+
+				<h:outputText value="Tematica: " />
+				<h:inputText maxlength="15" />
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+	<ui:define name="footer">
+		Desarrollado por: Cardenas - Padilla - Prado -Reinoso
+	</ui:define>
+</ui:composition>
+</html>
