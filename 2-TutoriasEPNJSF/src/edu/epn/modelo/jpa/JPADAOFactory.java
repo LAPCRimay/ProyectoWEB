@@ -30,5 +30,11 @@ public class JPADAOFactory extends DAOFactory{
 		return new JPAAdministradorDAO();
 	}
 
+	@Override
+	public UsuarioDAO getUsuarioDAO() {
+		// TODO Auto-generated method stub
+		return new JPAUsuarioDAO();
+	}
+
 	
 }

@@ -10,10 +10,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.NamedQuery;
 
 @Entity
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="usu_tipo")
+@NamedQuery(name="findUsuarioTipo", query="SELECT u FROM Usuario as u WHERE u.username LIKE :userName and u.clave LIKE :clave and TYPE(u) = :EST")
 public class  Usuario implements Serializable {
 
 	/**
@@ -77,5 +79,9 @@ public class  Usuario implements Serializable {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	/*@Transient
+	public String getDecriminatorValue() {
+	    return this.getClass().getAnnotation(DiscriminatorValue.class).value();
+	}*/
 
 }

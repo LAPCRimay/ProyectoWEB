@@ -8,10 +8,12 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 @Entity
 @DiscriminatorValue("EST")
 //@Table(name="Estudiante")
+@NamedQuery(name="findEstudiant", query="SELECT e FROM Estudiante as e WHERE e.username LIKE :userName and e.clave LIKE :clave and TYPE(e) = :EST")
 public class Estudiante extends Usuario implements Serializable {
 	/**
 	 * 
@@ -84,5 +86,10 @@ public class Estudiante extends Usuario implements Serializable {
 		}*/
 		return true;
 	}
+	@Transient
+	public String getDecriminatorValue() {
+	    return this.getClass().getAnnotation(DiscriminatorValue.class).value();
+	}
+
 	
 }

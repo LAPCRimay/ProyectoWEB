@@ -18,6 +18,7 @@ import javax.persistence.OneToMany;
 @DiscriminatorValue("PRO")
 
 //@Table(name="Docente")
+@NamedQuery(name="findProfesor", query="SELECT p FROM Profesor as p WHERE p.username LIKE :userName and p.clave LIKE :clave")
 public class Profesor extends Usuario implements Serializable{
 	/**
 	 * 
