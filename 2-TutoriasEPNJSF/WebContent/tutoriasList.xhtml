@@ -6,41 +6,34 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
 <h:body>
-	<p:outputLabel value="LISTA DE TUTORIAS" />
+
 	<h:form>
-		<p:dataTable border="1" var="item" value="#{listarTutoria.lista}">
-			<p:column>
-				<f:facet name="header">ID</f:facet>
-				<p:outputLabel value="#{item.id}" />
+		<p:dataTable var="item" value="#{listarTutoria.lista}">
+			<f:facet name="header">
+				<p:outputLabel value="LISTA DE TUTORIAS" />
+			</f:facet>
+			<p:column headerText="ID">
+				<h:outputText value="#{item.id}" />
 			</p:column>
-			<p:column>
-				<f:facet name="header">Fecha</f:facet>
-				<p:outputLabel value="#{item.fecha}" />
+			<p:column headerText="FECHA">
+				<h:outputText value="#{item.fecha}" />
 			</p:column>
-			<p:column>
-				<f:facet name="header">HoraInicio</f:facet>
-				<p:outputLabel value="#{item.horaInicio}" />
+			<p:column headerText="HORA-INICIO">
+				<h:outputText value="#{item.horaInicio}" />
 			</p:column>
-			<p:column>
-				<f:facet name="header">HoraFin</f:facet>
-				<p:outputLabel value="#{item.horaFin}" />
+			<p:column headerText="HORA-FIN">
+				<h:outputText value="#{item.horaFin}" />
 			</p:column>
-			<p:column>
-				<f:facet name="header">Nombre Estudiante</f:facet>
-				<p:outputLabel value="#{item.estudiante.nombre}" />
+			<p:column headerText="ESTUDIANTE">
+				<h:outputText
+					value="#{item.estudiante.nombre} #{item.estudiante.apellido}" />
 			</p:column>
-			<p:column>
-				<f:facet name="header">Apellido Estudiante</f:facet>
-				<p:outputLabel value="#{item.estudiante.apellido}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">Nombre Profesor</f:facet>
-				<p:outputLabel value="#{item.profesor.nombre}" />
-			</p:column>
-			<p:column>
-				<f:facet name="header">Apellido Profesor</f:facet>
-				<p:outputLabel value="#{item.profesor.apellido}" />
+			<p:column headerText="PROFESOR">
+				<h:outputText
+					value="#{item.profesor.nombre} #{item.profesor.apellido}" />
 			</p:column>
 		</p:dataTable>
 	</h:form>

@@ -2,11 +2,8 @@ package edu.epn.modelo.entities;
 
 import java.io.Serializable;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -46,10 +43,10 @@ public class Tutoria implements Serializable {
 	@Column(name="tut_tematica")
 	private String tematica;
 	//Relaciones
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(cascade={CascadeType.MERGE},fetch=FetchType.LAZY)
 	@JoinColumn(name="pro_codigo")
 	private Profesor profesor;
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(cascade={CascadeType.MERGE},fetch=FetchType.LAZY)
 	@JoinColumn(name="est_codigo")
 	private Estudiante estudiante;
 	

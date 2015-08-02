@@ -13,7 +13,7 @@ import edu.epn.modelo.entities.Tutoria;
 import edu.epn.modelo.jpa.JPADAOFactory;
 
 @ManagedBean(name="registrarTutoria")
-
+@SessionScoped
 public class RegistrarTutoriaManagedBean {
 	List<Profesor> profesores=new ArrayList<Profesor>();
 	private Tutoria tutoria=new Tutoria();

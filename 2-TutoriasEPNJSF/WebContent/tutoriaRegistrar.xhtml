@@ -21,27 +21,22 @@
 				<f:selectItem itemLabel="Seleccione un profesor"  />
 				<f:selectItems value="#{registrarTutoria.profesores}" var="prof"
 				itemLabel="#{prof.apellido} #{prof.nombre}" itemValue="#{prof.id}" />
-				<f:converter converterId="javax.faces.Integer" />
 			</p:selectOneMenu>
 			<p:outputLabel value="Fecha: " />
-			<p:calendar id="popup" value="#{registrarTutoria.tutoria.fecha}">
-				<f:convertDateTime pattern="yyyy-MM-dd" />
-			</p:calendar>
+			<p:calendar id="popup" value="#{registrarTutoria.tutoria.fecha}" pattern="dd-mm-yyyy"/>
 			<p:outputLabel value="Hora inicio: " />
 			<p:inputText id="horaInicio"
-				value="#{registrarTutoria.tutoria.horaInicio}" size="10"
-				label="Fecha" />
+				value="#{registrarTutoria.tutoria.horaInicio}" size="10" />
 			<p:outputLabel value="Hora fin: " />
 			<p:inputText id="horaFin" value="#{registrarTutoria.tutoria.horaFin}"
-				size="10" label="Fecha"/>
+				size="10" />
 			<p:outputLabel value="Tematica: "/>
 			<p:inputText id="tematica" value="#{registrarTutoria.tutoria.tematica}" size="14"/>
 
-			<h:commandButton action="#{registrarTutoria.guardar()}"
+			<h:commandButton action="#{registrarTutoria.guardar}"
 				value="Guardar" />
-			<h:commandButton action="#{registrarTutoria.cancelar()}"
+			<h:commandButton action="#{registrarTutoria.cancelar}"
 				value="Cancelar" />
-
 		</p:panelGrid>
 	</h:form>
 </h:body>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Tutorias</title>
+	<script src="http://code.jquery.com/jquery-1.0.4.js" />
+	<script>
+		$(document).ready(function() {
+			$("#texto1").keyup(function() {
+				var value = $(this).val();
+				$("#texto2").val(value);
+			});
+		});
+	</script>
+</h:head>
+<h:body>
+	<h:head>
+	</h:head>
+
+	<h:form>
+		<p:outputLabel id="texto2" value="Bienvenido #{Usuario.u.nombre} #{Usuario.u.apellido}" />
+		<p:panelGrid columns="1">
+			<f:facet name="header">
+				<p:outputLabel value="MENU PROFESOR" />
+			</f:facet>
+			<p:commandLink value="Listar Tutorias"
+				action="#{listarTutoria.getListaByProf}"
+				actionListener="#{listarTutoria.attrListener}">
+				<f:attribute name="idprof" value='#{Usuario.id}' />
+			</p:commandLink>
+		</p:panelGrid>
+	</h:form>
+</h:body>
+</html>
