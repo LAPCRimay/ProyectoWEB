@@ -4,52 +4,46 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="plantillas/plantilla.xhtml">
 	<ui:define name="header">
 	    LISTA DE TUTORIAS
 	</ui:define>
-	<ui:define name="content">
 	    <h:form>
 	    	<h:dataTable border="1" var="item" value="#{listarTutoria.lista}">
-	    	<h:column>
+	    	<p:column>
 	    		<f:facet name="header">ID</f:facet>
-	    		<h:outputText value="#{item.id}"/>
-	    	</h:column>
-	    	<h:column>
+	    		<p:outputLabel value="#{item.id}"/>
+	    	</p:column>
+	    	<p:column>
 	    		<f:facet name="header">Fecha</f:facet>
-	    		<h:outputText value="#{item.fecha}"/>
-	    	</h:column>
-	    	<h:column>
+	    		<p:outputLabel value="#{item.fecha}"/>
+	    	</p:column>
+	    	<p:column>
 	    		<f:facet name="header">HoraInicio</f:facet>
-	    		<h:outputText value="#{item.horaInicio}"/>
-	    	</h:column>
-	    	<h:column>
+	    		<p:outputLabel value="#{item.horaInicio}"/>
+	    	</p:column>
+	    	<p:column>
 	    		<f:facet name="header">HoraFin</f:facet>
-	    		<h:outputText value="#{item.horaFin}"/>
-	    	</h:column>
-	    	<h:column>
+	    		<p:outputLabel value="#{item.horaFin}"/>
+	    	</p:column>
+	    	<p:column>
 	    		<f:facet name="header">Nombre Estudiante</f:facet>
-	    		<h:outputText value="#{item.estudiante.nombre}"/>
-	    	</h:column>
-	    	<h:column>
+	    		<p:outputLabel value="#{item.estudiante.nombre}"/>
+	    	</p:column>
+	    	<p:column>
 	    		<f:facet name="header">Apellido Estudiante</f:facet>
-	    		<h:outputText value="#{item.estudiante.apellido}"/>
-	    	</h:column>
-	    	<h:column>
+	    		<p:outputLabel value="#{item.estudiante.apellido}"/>
+	    	</p:column>
+	    	<p:column>
 	    		<f:facet name="header">Nombre Profesor</f:facet>
-	    		<h:outputText value="#{item.profesor.nombre}"/>
-	    	</h:column>
-	    	<h:column>
+	    		<p:outputLabel value="#{item.profesor.nombre}"/>
+	    	</p:column>
+	    	<p:column>
 	    		<f:facet name="header">Apellido Profesor</f:facet>
-	    		<h:outputText value="#{item.profesor.apellido}"/>
-	    	</h:column>
+	    		<p:outputLabel value="#{item.profesor.apellido}"/>
+	    	</p:column>
 	    	</h:dataTable>
 	    </h:form>
-	</ui:define>
-	<ui:define name="footer">
-	<br/>
-	</ui:define>
-</ui:composition>
 </html>

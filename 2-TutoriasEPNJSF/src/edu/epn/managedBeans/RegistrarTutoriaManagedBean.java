@@ -13,7 +13,7 @@ import edu.epn.modelo.entities.Tutoria;
 import edu.epn.modelo.jpa.JPADAOFactory;
 
 @ManagedBean(name="registrarTutoria")
-@SessionScoped
+
 public class RegistrarTutoriaManagedBean {
 	List<Profesor> profesores=new ArrayList<Profesor>();
 	private Tutoria tutoria=new Tutoria();
@@ -42,6 +42,9 @@ public class RegistrarTutoriaManagedBean {
 	}
 
 	public Tutoria getTutoria() {
+		if(this.tutoria==null){
+			return this.tutoria=new Tutoria();
+		}else
 		return tutoria;
 	}
 
@@ -53,6 +56,7 @@ public class RegistrarTutoriaManagedBean {
 	//ACCIONES
 	public String guardar(){
 		//Referencia al modelo para guardar la tutoria
+		System.out.println("Se empieza a querer guardar... ");
 		tutoria.setProfesor(this.profesorSeleccionado);
 		tutoria.setEstudiante(this.estudianteSolicitante);
 		JPADAOFactory.getFactory().getTutoriaDAO().create(this.tutoria);

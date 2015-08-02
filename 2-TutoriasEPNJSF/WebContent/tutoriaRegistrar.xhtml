@@ -16,11 +16,11 @@
 
 			<p:outputLabel value="Profesor: " />
 
-			<p:selectOneMenu id="tutoria" 
+			<p:selectOneMenu id="profesoresAEscoger" 
 				value="#{registrarTutoria.profesorSeleccionado.id}">
 				<f:selectItem itemLabel="Seleccione un profesor"  />
-				<f:selectItems value="#{registrarTutoria.profesores}" var="profesores"
-				itemLabel="#{profesores.apellido} #{profesores.nombre}" itemValue="#{profesores.id}" />
+				<f:selectItems value="#{registrarTutoria.profesores}" var="prof"
+				itemLabel="#{prof.apellido} #{prof.nombre}" itemValue="#{prof.id}" />
 				<f:converter converterId="javax.faces.Integer" />
 			</p:selectOneMenu>
 			<p:outputLabel value="Fecha: " />
@@ -40,7 +40,7 @@
 			<h:commandButton action="#{registrarTutoria.guardar()}"
 				value="Guardar" />
 			<h:commandButton action="#{registrarTutoria.cancelar()}"
-				value="Cancelar" oncomplete="limpiarForm()" />
+				value="Cancelar" />
 
 		</p:panelGrid>
 	</h:form>

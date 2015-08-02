@@ -11,15 +11,18 @@
 <h:body>
 	<h:form>
 		<p:panelGrid columns="2">
-		<f:facet name="header">
+			<f:facet name="header">
 				<p:outputLabel value="LOGIN" />
 			</f:facet>
 
-			<p:outputLabel value="Username" />
+			<p:outputLabel value="Usuario: " />
 			<p:inputText id="username" value="#{Usuario.u.username}" />
-			<p:outputLabel value="Password" />
-			<p:password  value="#{Usuario.u.clave}"/>
-			<p:commandButton action="#{Usuario.verificarUsuario}" value="Login" />
+			<p:outputLabel value="Contrasena: " />
+			<p:password value="#{Usuario.u.clave}" />
+			<f:facet name="footer">
+				<p:commandButton action="#{Usuario.verificarUsuario}" value="Ingresar" />
+			</f:facet>
+
 		</p:panelGrid>
 	</h:form>
 </h:body>
