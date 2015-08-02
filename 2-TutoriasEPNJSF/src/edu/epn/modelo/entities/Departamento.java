@@ -1,5 +1,4 @@
 package edu.epn.modelo.entities;
-//
 import java.io.Serializable;
 import java.util.List;
 
