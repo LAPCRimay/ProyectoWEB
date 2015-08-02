@@ -1,56 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html"
-	xmlns:f="http://java.sun.com/jsf/core">
-<head>
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Insert title here</title>
+</h:head>
+<h:body>
+	<h:form>
+		
+		<p:panelGrid columns="2">
+			<f:facet name="header">
+				<p:outputLabel value="Formulario - Registro Tutoria" />
+			</f:facet>
 
-</head>
+			<p:outputLabel value="Profesor: " />
 
-<ui:composition template="plantillas/plantilla.xhtml">
-	
-<ui:define name="header">
-		REGISTRAR TUTORIA
-	</ui:define>
-	<ui:define name="content">
-		<h:form>
-			<h:panelGrid columns="2">
-				<f:facet name="header">
-					<h:outputText value="Formulario - Registro Tutoria" />
-				</f:facet>
+			<p:selectOneMenu id="tutoria" 
+				value="#{registrarTutoria.profesorSeleccionado.id}">
+				<f:selectItem itemLabel="Seleccione un profesor"  />
+				<f:selectItems value="#{registrarTutoria.profesores}" var="profesores"
+				itemLabel="#{profesores.apellido} #{profesores.nombre}" itemValue="#{profesores.id}" />
+				<f:converter converterId="javax.faces.Integer" />
+			</p:selectOneMenu>
+			<p:outputLabel value="Fecha: " />
+			<p:calendar id="popup" value="#{registrarTutoria.tutoria.fecha}">
+				<f:convertDateTime pattern="yyyy-MM-dd" />
+			</p:calendar>
+			<p:outputLabel value="Hora inicio: " />
+			<p:inputText id="horaInicio"
+				value="#{registrarTutoria.tutoria.horaInicio}" size="10"
+				label="Fecha" />
+			<p:outputLabel value="Hora fin: " />
+			<p:inputText id="horaFin" value="#{registrarTutoria.tutoria.horaFin}"
+				size="10" label="Fecha"/>
+			<p:outputLabel value="Tematica: "/>
+			<p:inputText id="tematica" value="#{registrarTutoria.tutoria.tematica}" size="14"/>
 
-				<h:outputText value="Profesor: " />
+			<h:commandButton action="#{registrarTutoria.guardar()}"
+				value="Guardar" />
+			<h:commandButton action="#{registrarTutoria.cancelar()}"
+				value="Cancelar" oncomplete="limpiarForm()" />
 
-				<h:selectOneMenu id="tutoria"
-					value="#{registrarTutoria.tutoria.profesor}">
-					<f:selectItems value="#{registrarTutoria.listaProfesores}" />
-				</h:selectOneMenu>
-				<h:outputText value="Fecha: " />
-				<h:inputText id="fecha" clas="fechatutoria" size="10"
-					required="true" value="#{registrarTutoria.tutoria.fecha}" />
-				<h:outputText value="Hora inicio: " />
-				<h:inputText id="horaInicio" value="#{registrarTutoria.tutoria.horaInicio}" size="10"
-					required="true" label="Fecha">
-
-					<f:validateRegex
-						pattern="^(0[1-9]|1\d|2[0-3]):([0-5]\d):([0-5]\d)$" />
-				</h:inputText>
-				
-				<h:outputText value="Hora fin: " />
-				<h:inputText id="horaFin" value="#{registrarTutoria.tutoria.horaFin}" size="10"
-					required="true" label="Fecha">
-					<f:validateRegex
-						pattern="^(0[1-9]|1\d|2[0-3]):([0-5]\d):([0-5]\d)$" />
-				</h:inputText>
-			<h:commandButton id="cmdGuardar" value="Guardar" action="#{registrarTutoria.guardar}"></h:commandButton>
-			<h:commandButton id="cmdCancelar" value="Cancelar" action="#{registrarTutoria.cancelar}"></h:commandButton>
-		</h:panelGrid>
-		</h:form>
-	</ui:define>
-	<ui:define name="footer">
-		Desarrollado por: Cardenas - Padilla - Prado -Reinoso
-	</ui:define>
-</ui:composition>
+		</p:panelGrid>
+	</h:form>
+</h:body>
 </html>

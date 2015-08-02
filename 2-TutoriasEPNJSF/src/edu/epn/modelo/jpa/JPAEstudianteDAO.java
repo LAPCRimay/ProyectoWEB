@@ -44,4 +44,13 @@ implements EstudianteDAO {
 		return res3;
 	}
 
+	@Override
+	public Estudiante getEstudianteByID(int id) {
+		//Con JPQL
+		Query query = this.em.createQuery("SELECT e from Estudiante e WHERE e.id= :idEst");
+		query.setParameter("idEst", id);
+		Estudiante resultado = (Estudiante) query.getSingleResult();
+		return resultado;
+	}
+
 }

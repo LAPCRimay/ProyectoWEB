@@ -36,13 +36,15 @@ public class Tutoria implements Serializable {
 	@Temporal(TemporalType.DATE)
 	@Column(name="tut_fecha")
 	private Date fecha;
-	@Temporal(TemporalType.TIME)
-	@Column(name="hora_inicio")
-	private Date horaInicio;
-	@Temporal(TemporalType.TIME)
-	@Column(name="hora_fin")
-	private Date horaFin;
 	
+	@Column(name="hora_inicio")
+	private String horaInicio;
+	
+	@Column(name="hora_fin")
+	private String horaFin;
+	
+	@Column(name="tut_tematica")
+	private String tematica;
 	//Relaciones
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="pro_codigo")
@@ -96,20 +98,29 @@ public class Tutoria implements Serializable {
 		return hash;
 	}
 
-	public Date getHoraInicio() {
+	public String getHoraInicio() {
 		return horaInicio;
 	}
 
-	public void setHoraInicio(Date horaInicio) {
+	public void setHoraInicio(String horaInicio) {
 		this.horaInicio = horaInicio;
 	}
 
-	public Date getHoraFin() {
+	public String getHoraFin() {
 		return horaFin;
 	}
 
-	public void setHoraFin(Date horaFin) {
+	public void setHoraFin(String horaFin) {
 		this.horaFin = horaFin;
+	}
+
+	
+	public String getTematica() {
+		return tematica;
+	}
+
+	public void setTematica(String tematica) {
+		this.tematica = tematica;
 	}
 
 	@Override

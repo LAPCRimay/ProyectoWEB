@@ -1,26 +1,26 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core">
-    
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
 <h:head>
-    <title>Tutorias</title>
+	<title>Tutorias</title>
 </h:head>
 <h:body>
-    <h:form>
-        <h3>Login:</h3>
-        <h:outputText value="Username" />
-        <h:inputText id="username" value="#{Usuario.u.username}"></h:inputText>
-        <h:message for="username"></h:message>
-        <br /><br />
-         
-        <h:outputText value="Password" />
-        <h:inputSecret id="password" value="#{Usuario.u.clave}"></h:inputSecret>
-        <h:message for="password"></h:message>
-        <br /><br />
-        <h:commandButton action="#{Usuario.verificarUsuario}" value="Login">
-        </h:commandButton>
-    </h:form>
+	<h:form>
+		<p:panelGrid columns="2">
+		<f:facet name="header">
+				<p:outputLabel value="LOGIN" />
+			</f:facet>
+
+			<p:outputLabel value="Username" />
+			<p:inputText id="username" value="#{Usuario.u.username}" />
+			<p:outputLabel value="Password" />
+			<p:password  value="#{Usuario.u.clave}"/>
+			<p:commandButton action="#{Usuario.verificarUsuario}" value="Login" />
+		</p:panelGrid>
+	</h:form>
 </h:body>
 </html>
